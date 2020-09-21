@@ -12,3 +12,5 @@ pip-wheel-metadata/
 build/
 dist/
 .tox
+.gitsecret/keys/random_seed
+!*.secret
