@@ -6,9 +6,13 @@ import arrow
 import oauth2
 import structlog
 
-from .config import (NYCASP_TWITTER_ACCOUNT, TWITTER_ACCESS_TOKEN,
-                     TWITTER_ACCESS_TOKEN_SECRET, TWITTER_CONSUMER_KEY,
-                     TWITTER_CONSUMER_SECRET)
+from .config import (
+    NYCASP_TWITTER_ACCOUNT,
+    TWITTER_ACCESS_TOKEN,
+    TWITTER_ACCESS_TOKEN_SECRET,
+    TWITTER_CONSUMER_KEY,
+    TWITTER_CONSUMER_SECRET,
+)
 
 logger = structlog.get_logger()
 

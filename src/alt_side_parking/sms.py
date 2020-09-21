@@ -1,8 +1,13 @@
 import phonenumbers
 from twilio.rest import Client
 
-from .config import (MOBILE, REMINDER_TEXT, TWILIO_ACCOUNT_SID,
-                     TWILIO_AUTH_TOKEN, TWILIO_NUMBER)
+from .config import (
+    MOBILE,
+    REMINDER_TEXT,
+    TWILIO_ACCOUNT_SID,
+    TWILIO_AUTH_TOKEN,
+    TWILIO_NUMBER,
+)
 
 
 def send_reminder():

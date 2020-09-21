@@ -1,5 +1,7 @@
-from alt_side_parking.feed import (get_nyc_alt_side_parking_tweets,
-                                   is_suspended_today)
+from alt_side_parking.feed import (
+    get_nyc_alt_side_parking_tweets,
+    is_suspended_today,
+)
 from automock import swap_mock
 
 
