@@ -59,7 +59,7 @@ setup(
     entry_points=(
         """
 [console_scripts]
-remindme = alt_side_parking.scripts:main
+remindme = alt_side_parking.scripts.reminder:main
 """
     ),
 )
