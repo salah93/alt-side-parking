@@ -43,7 +43,7 @@ setup(
     name="alt-side-parking",
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
-    long_description_content_type="text/x-rst",
+    long_description_content_type="text/rst",
     classifiers=CLASSIFIERS,
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
