@@ -11,3 +11,5 @@ Developing
 
    >>> pip install -e '.[dev]'
    >>> tox -e lint && tox
+   >>> git secret reveal
+   >>> direnv allow
