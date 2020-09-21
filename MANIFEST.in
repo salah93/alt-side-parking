@@ -1,2 +1,2 @@
 include README*
-recursive-include src/alt-side-parking *
+recursive-include src/alt_side_parking *
