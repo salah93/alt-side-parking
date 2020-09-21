@@ -56,4 +56,10 @@ setup(
         "test": TEST_REQUIREMENTS,
         "dev": TEST_REQUIREMENTS + DEV_REQUIREMENTS,
     },
+    entry_points=(
+        """
+[console_scripts]
+remindme = alt_side_parking.scripts:main
+"""
+    ),
 )
