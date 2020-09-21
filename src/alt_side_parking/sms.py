@@ -12,7 +12,7 @@ from .config import (
 REMINDER_TEXT = "Move your car my guy"
 
 
-def send_reminder():
+def send_reminder() -> None:
     client = get_client()
     personal_number = normalize_number(MOBILE)
     twilio_number = normalize_number(TWILIO_NUMBER)
@@ -23,11 +23,11 @@ def send_reminder():
     )
 
 
-def get_client():
+def get_client() -> Client:
     return Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 
-def normalize_number(mobile_number: str):
+def normalize_number(mobile_number: str) -> str:
     return phonenumbers.format_number(
         phonenumbers.parse(mobile_number, None),
         phonenumbers.PhoneNumberFormat.E164,

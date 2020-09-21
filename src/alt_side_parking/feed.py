@@ -20,7 +20,7 @@ TWEETS_API_URL = "https://api.twitter.com/1.1/statuses/user_timeline.json?"
 SUSPENDED_TODAY_TEXT = "#NYCASP rules are suspended today, {today}"
 
 
-def is_suspended_today():
+def is_suspended_today() -> bool:
     tweets = get_nyc_alt_side_parking_tweets()
     today = arrow.utcnow().to("US/Eastern")
     return any(
@@ -29,7 +29,7 @@ def is_suspended_today():
     )
 
 
-def get_nyc_alt_side_parking_tweets(count=5) -> List[str]:
+def get_nyc_alt_side_parking_tweets(count: int = 5) -> List[str]:
     search_query = {
         "count": count,
         "screen_name": NYCASP_TWITTER_ACCOUNT,
@@ -52,7 +52,7 @@ def get_nyc_alt_side_parking_tweets(count=5) -> List[str]:
     return tweets
 
 
-def get_client():
+def get_client() -> oauth2.Client:
     consumer = oauth2.Consumer(
         key=TWITTER_CONSUMER_KEY, secret=TWITTER_CONSUMER_SECRET
     )
