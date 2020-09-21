@@ -8,9 +8,9 @@ from alt_side_parking.sms import (
 def test_send_reminder():
     send_reminder()
     mock = get_mock("alt_side_parking.sms.get_client")
-    assert mock().api.account.messages.create.called_with(
+    mock().api.account.messages.create.assert_called_with(
         to="+13472344323",
-        from_="12123452342",
+        from_="+12123452342",
         body="Move your car my guy",
     )
 
