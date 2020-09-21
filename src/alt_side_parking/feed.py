@@ -1,18 +1,14 @@
-import arrow
 import json
+from typing import List
+from urllib.parse import urlencode
+
+import arrow
 import oauth2
 import structlog
 
-from urllib.parse import urlencode
-from typing import List
-from .config import (
-    TWITTER_ACCESS_TOKEN,
-    TWITTER_ACCESS_TOKEN_SECRET,
-    TWITTER_CONSUMER_KEY,
-    TWITTER_CONSUMER_SECRET,
-    NYCASP_TWITTER_ACCOUNT,
-)
-
+from .config import (NYCASP_TWITTER_ACCOUNT, TWITTER_ACCESS_TOKEN,
+                     TWITTER_ACCESS_TOKEN_SECRET, TWITTER_CONSUMER_KEY,
+                     TWITTER_CONSUMER_SECRET)
 
 logger = structlog.get_logger()
 

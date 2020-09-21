@@ -1,7 +1,7 @@
 from importlib.metadata import version
-from .sms import send_reminder
-from .feed import is_suspended_today
 
+from .feed import is_suspended_today
+from .sms import send_reminder
 
 __version__ = version("wheel")
 

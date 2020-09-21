@@ -1,6 +1,5 @@
 from setuptools import find_packages, setup
 
-
 ######
 
 CLASSIFIERS = [
@@ -14,23 +13,24 @@ AUTHOR = "Salah Ahmed"
 AUTHOR_EMAIL = "salahs.email@pm.me"
 
 REQUIREMENTS = [
-    "twilio",
-    "oauth2>=1.9.0.post1,<2.0.0",
-    "structlog",
     "arrow",
+    "importlib_metadata",
+    "oauth2>=1.9.0.post1,<2.0.0",
     "phonenumbers",
+    "structlog",
+    "twilio",
 ]
 TEST_REQUIREMENTS = [
-    "pytest-cov",
-    "coverage[toml]",
     "automock",
+    "coverage[toml]",
+    "pytest-cov",
     "pytest-freezegun",
 ]
 DEV_REQUIREMENTS = [
-    "ipython",
-    "pdbpp",
     "black",
     "flake8",
+    "ipython",
+    "pdbpp",
     "pre-commit",
     "tox",
 ]

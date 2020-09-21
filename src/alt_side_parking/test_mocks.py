@@ -1,9 +1,8 @@
 import json
-import automock
-
-from unittest.mock import Mock
 from collections import namedtuple
+from unittest.mock import Mock
 
+import automock
 
 Response = namedtuple("Response", "status text")
 

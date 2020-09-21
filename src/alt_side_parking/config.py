@@ -1,6 +1,5 @@
 import os
 
-
 # sms
 MOBILE = os.environ["CELL_PHONE_NUMBER"]
 TWILIO_ACCOUNT_SID = os.environ["TWILIO_ACCOUNT_SID"]
@@ -18,6 +17,4 @@ TWITTER_CONSUMER_SECRET = os.environ["TWITTER_CONSUMER_SECRET"]
 
 NYCASP_TWITTER_ACCOUNT = "NYCASP"
 
-AUTOMOCK_REGISTRATION_IMPORTS = (
-    'alt_side_parking.test_mocks',
-)
+AUTOMOCK_REGISTRATION_IMPORTS = ("alt_side_parking.test_mocks",)
