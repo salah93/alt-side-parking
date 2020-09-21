@@ -17,7 +17,9 @@ def send_reminder():
     personal_number = normalize_number(MOBILE)
     twilio_number = normalize_number(TWILIO_NUMBER)
     client.api.account.messages.create(
-        to=personal_number, from_=twilio_number, body=REMINDER_TEXT,
+        to=personal_number,
+        from_=twilio_number,
+        body=REMINDER_TEXT,
     )
 
 

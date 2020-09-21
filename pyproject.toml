@@ -1,6 +1,3 @@
-[tool.black]
-line-length = 79
-
 [tool.coverage.run]
 parallel = true
 branch = true
@@ -8,10 +5,3 @@ source = ["alt_side_parking"]
 
 [tool.coverage.paths]
 source = ["src", ".tox/*/site-packages"]
-
-[tool.isort]
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-use_parentheses = true
-line_length = 79
