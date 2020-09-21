@@ -5,7 +5,7 @@ from alt_side_parking.feed import (
 from automock import swap_mock
 
 
-@swap_mock("alt_side_parking.feed.get_client", failed_response=True)
+@swap_mock("alt_side_parking.feed.TwitterBot", failed_response=True)
 def test_failed_fetch():
     tweets = get_nyc_alt_side_parking_tweets()
     assert [] == tweets

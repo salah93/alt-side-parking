@@ -14,10 +14,10 @@ AUTHOR_EMAIL = "salahs.email@pm.me"
 
 REQUIREMENTS = [
     "arrow",
-    "oauth2>=1.9.0.post1,<2.0.0",
     "phonenumbers",
     "structlog",
     "twilio",
+    "salahs-twitterbot>=1.3.0,<2.0",
 ]
 TEST_REQUIREMENTS = [
     "automock",

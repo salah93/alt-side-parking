@@ -1,9 +1,8 @@
-import json
 from typing import List
-from urllib.parse import urlencode
+
+from twitterbot.TwitterBot import TwitterBot
 
 import arrow
-import oauth2
 import structlog
 
 from .config import (
@@ -30,33 +29,17 @@ def is_suspended_today() -> bool:
 
 
 def get_nyc_alt_side_parking_tweets(count: int = 5) -> List[str]:
-    search_query = {
-        "count": count,
-        "screen_name": NYCASP_TWITTER_ACCOUNT,
-    }
-    url = TWEETS_API_URL + urlencode(search_query)
-    client = get_client()
-    response, tweets = client.request(
-        url.encode("utf-8"),
-        method="GET",
-        body="".encode("utf-8"),
-        headers=None,
-    )
+    response, tweets = TwitterBot(
+        TWITTER_CONSUMER_KEY,
+        TWITTER_CONSUMER_SECRET,
+        TWITTER_ACCESS_TOKEN,
+        TWITTER_ACCESS_TOKEN_SECRET,
+    ).get_tweets(screen_name=NYCASP_TWITTER_ACCOUNT, count=count)
     if response.status != 200:
         logger.error(
             "could not fetch tweets", status=response.status, response=response
         )
         tweets = []
     else:
-        tweets = [t["text"] for t in json.loads(tweets.decode("utf-8"))]
+        tweets = [t["text"] for t in tweets]
     return tweets
-
-
-def get_client() -> oauth2.Client:
-    consumer = oauth2.Consumer(
-        key=TWITTER_CONSUMER_KEY, secret=TWITTER_CONSUMER_SECRET
-    )
-    token = oauth2.Token(
-        key=TWITTER_ACCESS_TOKEN, secret=TWITTER_ACCESS_TOKEN_SECRET
-    )
-    return oauth2.Client(consumer, token)

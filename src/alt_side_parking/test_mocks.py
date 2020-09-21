@@ -1,4 +1,3 @@
-import json
 from collections import namedtuple
 from unittest.mock import Mock
 
@@ -80,13 +79,13 @@ def tweet_mock_factory(failed_response=False):
             },
         ]
 
-    def side_effect(url, method, body, headers=None):
-        return response, json.dumps(tweets).encode("utf-8")
+    def side_effect(screen_name=None, max_id=None, count=5):
+        return response, tweets
 
     m = Mock()
-    m().request.side_effect = side_effect
+    m().get_tweets.side_effect = side_effect
     return m
 
 
 automock.register("alt_side_parking.sms.get_client")
-automock.register("alt_side_parking.feed.get_client", tweet_mock_factory)
+automock.register("alt_side_parking.feed.TwitterBot", tweet_mock_factory)
