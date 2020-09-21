@@ -41,7 +41,7 @@ def get_nyc_alt_side_parking_tweets(count=5) -> List[str]:
     url = TWEETS_API_URL + urlencode(search_query)
     client = get_client()
     response, tweets = client.request(
-        url.encode("ascii"),
+        url.encode("utf-8"),
         method="GET",
         body="".encode("utf-8"),
         headers=None,
