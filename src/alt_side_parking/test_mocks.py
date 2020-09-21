@@ -75,7 +75,7 @@ def tweet_mock_factory(failed_response=False):
                 "retweet_count": 9,
                 "retweeted": False,
                 "source": '<a href="https://www.hootsuite.com" rel="nofollow">Hootsuite Inc.</a>',
-                "text": "#NYCASP rules will be suspended today, September 20",
+                "text": "#NYCASP rules are suspended today, September 20",
                 "truncated": False,
                 "user": {},
             },

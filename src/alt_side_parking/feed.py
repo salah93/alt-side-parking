@@ -17,19 +17,15 @@ from .config import (
 logger = structlog.get_logger()
 
 TWEETS_API_URL = "https://api.twitter.com/1.1/statuses/user_timeline.json?"
-SUSPENDED_TODAY_TEXT = "#NYCASPC rules are suspended today, {today}"
+SUSPENDED_TODAY_TEXT = "#NYCASP rules are suspended today, {today}"
 
 
 def is_suspended_today():
     tweets = get_nyc_alt_side_parking_tweets()
     today = arrow.utcnow().to("US/Eastern")
     return any(
-        (
-            lambda t: t.startswith(
-                SUSPENDED_TODAY_TEXT.format(today=today.format("MMMM D"))
-            )
-            for t in tweets
-        )
+        t.startswith(SUSPENDED_TODAY_TEXT.format(today=today.format("MMMM D")))
+        for t in tweets
     )
 
 
