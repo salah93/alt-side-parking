@@ -20,7 +20,12 @@ REQUIREMENTS = [
     "arrow",
     "phonenumbers",
 ]
-TEST_REQUIREMENTS = ["pytest-cov", "coverage[toml]"]
+TEST_REQUIREMENTS = [
+    "pytest-cov",
+    "coverage[toml]",
+    "automock",
+    "pytest-freezegun",
+]
 DEV_REQUIREMENTS = [
     "ipython",
     "pdbpp",
