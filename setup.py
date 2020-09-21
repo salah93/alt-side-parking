@@ -14,7 +14,6 @@ AUTHOR_EMAIL = "salahs.email@pm.me"
 
 REQUIREMENTS = [
     "arrow",
-    "importlib_metadata",
     "oauth2>=1.9.0.post1,<2.0.0",
     "phonenumbers",
     "structlog",
