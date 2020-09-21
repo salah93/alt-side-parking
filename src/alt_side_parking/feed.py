@@ -53,6 +53,10 @@ def get_nyc_alt_side_parking_tweets(count=5) -> List[str]:
 
 
 def get_client():
-    consumer = oauth2.Consumer(key=TWITTER_CONSUMER_KEY, secret=TWITTER_CONSUMER_SECRET)
-    token = oauth2.Token(key=TWITTER_ACCESS_TOKEN, secret=TWITTER_ACCESS_TOKEN_SECRET)
+    consumer = oauth2.Consumer(
+        key=TWITTER_CONSUMER_KEY, secret=TWITTER_CONSUMER_SECRET
+    )
+    token = oauth2.Token(
+        key=TWITTER_ACCESS_TOKEN, secret=TWITTER_ACCESS_TOKEN_SECRET
+    )
     return oauth2.Client(consumer, token)
