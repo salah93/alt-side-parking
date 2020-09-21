@@ -4,7 +4,7 @@ import oauth2
 import structlog
 
 from urllib.parse import urlencode
-from typing import List, Dict
+from typing import List
 from .config import (
     TWITTER_ACCESS_TOKEN,
     TWITTER_ACCESS_TOKEN_SECRET,
@@ -25,7 +25,7 @@ def is_suspended_today():
     today = arrow.utcnow().to("US/Eastern")
     return any(
         (
-            lambda t: t["text"].startswith(
+            lambda t: t.startswith(
                 SUSPENDED_TODAY_TEXT.format(today=today.format("MMMM D"))
             )
             for t in tweets
@@ -33,7 +33,7 @@ def is_suspended_today():
     )
 
 
-def get_nyc_alt_side_parking_tweets(count=5) -> List[Dict]:
+def get_nyc_alt_side_parking_tweets(count=5) -> List[str]:
     search_query = {
         "count": count,
         "screen_name": NYCASP_TWITTER_ACCOUNT,
@@ -52,7 +52,7 @@ def get_nyc_alt_side_parking_tweets(count=5) -> List[Dict]:
         )
         tweets = []
     else:
-        tweets = json.loads(tweets.decode("utf-8"))
+        tweets = [t["text"] for t in json.loads(tweets.decode("utf-8"))]
     return tweets
 
 
