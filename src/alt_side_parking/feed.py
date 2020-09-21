@@ -23,12 +23,13 @@ SUSPENDED_TODAY_TEXT = "#NYCASPC rules are suspended today, {today}"
 def is_suspended_today():
     tweets = get_nyc_alt_side_parking_tweets()
     today = arrow.utcnow().to("US/Eastern")
-    import pdb; pdb.set_trace()
     return any(
-        lambda t: t["body"].beginswith(
-            SUSPENDED_TODAY_TEXT.format(today=today.format("MMMM D"))
-        ),
-        tweets,
+        (
+            lambda t: t["text"].startswith(
+                SUSPENDED_TODAY_TEXT.format(today=today.format("MMMM D"))
+            )
+            for t in tweets
+        )
     )
 
 
