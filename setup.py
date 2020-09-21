@@ -13,7 +13,13 @@ URL = ""
 AUTHOR = "Salah Ahmed"
 AUTHOR_EMAIL = "salahs.email@pm.me"
 
-REQUIREMENTS = ['twilio']
+REQUIREMENTS = [
+    "twilio",
+    "oauth2>=1.9.0.post1,<2.0.0",
+    "structlog",
+    "arrow",
+    "phonenumbers",
+]
 TEST_REQUIREMENTS = ["pytest-cov", "coverage[toml]"]
 DEV_REQUIREMENTS = [
     "ipython",
